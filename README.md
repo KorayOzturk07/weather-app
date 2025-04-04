@@ -2,8 +2,6 @@
 
 A sleek, responsive weather application built with Flask and OpenWeatherMap API that provides current weather conditions for any city worldwide.
 
-![Weather App Screenshot](https://example.com/screenshot.jpg) *(Replace with actual screenshot URL)*
-
 ## Features ✨
 
 - Real-time weather data including:
