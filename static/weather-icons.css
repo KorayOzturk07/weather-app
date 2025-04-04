@@ -1,0 +1,42 @@
+@font-face {
+    font-family: 'weathericons';
+    src: url('https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.10/font/weathericons-regular-webfont.eot');
+    src: url('https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.10/font/weathericons-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.10/font/weathericons-regular-webfont.woff2') format('woff2'),
+         url('https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.10/font/weathericons-regular-webfont.woff') format('woff'),
+         url('https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.10/font/weathericons-regular-webfont.ttf') format('truetype'),
+         url('https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.10/font/weathericons-regular-webfont.svg#weathericons-regular-webfont') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.wi {
+    display: inline-block;
+    font-family: 'weathericons';
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Weather icon classes */
+.wi-owm-200:before { content: "\f01e"; }
+.wi-owm-201:before { content: "\f01e"; }
+.wi-owm-202:before { content: "\f01e"; }
+/* Add all other OWM icon mappings here */
+.wi-owm-800:before { content: "\f00d"; }
+.wi-owm-801:before { content: "\f002"; }
+.wi-owm-802:before { content: "\f002"; }
+.wi-owm-803:before { content: "\f041"; }
+.wi-owm-804:before { content: "\f013"; }
+/* Add more as needed */
+
+/* Additional icons */
+.wi-day-sunny:before { content: "\f00d"; }
+.wi-humidity:before { content: "\f07a"; }
+.wi-strong-wind:before { content: "\f050"; }
+.wi-barometer:before { content: "\f079"; }
+.wi-sunrise:before { content: "\f051"; }
+.wi-sunset:before { content: "\f052"; }
+.wi-alien:before { content: "\f075"; }

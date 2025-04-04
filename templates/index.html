@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hava Durumu Uygulaması</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='weather-icons.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <div class="app-header animate__animated animate__fadeInDown">
+            <h1>Hava Durumu</h1>
+            <p>Herhangi bir şehrin anlık hava durumunu öğrenin</p>
+        </div>
+        
+        <form method="POST" class="search-form animate__animated animate__fadeIn animate__delay-1s">
+            <input type="text" id="city" name="city" placeholder="Şehir adı girin..." required>
+            <button type="submit" aria-label="Ara">
+                <i class="wi wi-day-sunny"></i>
+            </button>
+        </form>
+
+        {% if weather_data %}
+        <div class="weather-container animate__animated animate__fadeInUp animate__delay-1s">
+            <div class="weather-main">
+                <div class="weather-location">
+                    <h2>{{ weather_data.city }}</h2>
+                    <p class="current-time">{{ weather_data.time }}</p>
+                </div>
+                
+                <div class="weather-icon">
+                    <i class="wi wi-owm-{{ weather_data.icon }}"></i>
+                </div>
+                
+                <div class="weather-temp">
+                    <div class="temp-main">{{ weather_data.temperature }}°</div>
+                    <div class="temp-feels">Hissedilen: {{ weather_data.feels_like }}°</div>
+                </div>
+                
+                <div class="weather-desc">{{ weather_data.description }}</div>
+            </div>
+            
+            <div class="weather-details">
+                <div class="detail-card">
+                    <i class="wi wi-humidity"></i>
+                    <div>
+                        <p>Nem</p>
+                        <p>{{ weather_data.humidity }}%</p>
+                    </div>
+                </div>
+                
+                <div class="detail-card">
+                    <i class="wi wi-strong-wind"></i>
+                    <div>
+                        <p>Rüzgar</p>
+                        <p>{{ weather_data.wind_speed }} m/s</p>
+                    </div>
+                </div>
+                
+                <div class="detail-card">
+                    <i class="wi wi-barometer"></i>
+                    <div>
+                        <p>Basınç</p>
+                        <p>{{ weather_data.pressure }} hPa</p>
+                    </div>
+                </div>
+                
+                <div class="detail-card">
+                    <i class="wi wi-sunrise"></i>
+                    <div>
+                        <p>Gün Doğumu</p>
+                        <p>{{ weather_data.sunrise }}</p>
+                    </div>
+                </div>
+                
+                <div class="detail-card">
+                    <i class="wi wi-sunset"></i>
+                    <div>
+                        <p>Gün Batımı</p>
+                        <p>{{ weather_data.sunset }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+
+        {% if error %}
+        <div class="error-message animate__animated animate__fadeIn animate__delay-1s">
+            <i class="wi wi-alien"></i>
+            <p>{{ error }}</p>
+        </div>
+        {% endif %}
+        
+        <div class="app-footer animate__animated animate__fadeIn animate__delay-2s">
+            <p>Anlık Hava Durumu Bilgileri</p>
+        </div>
+    </div>
+</body>
+</html>
