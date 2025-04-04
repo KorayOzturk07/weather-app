@@ -4,7 +4,7 @@ from datetime import datetime
 
 app = Flask(__name__, static_folder='static', template_folder='templates')
 
-API_KEY = "a18ad2642f39f6e38cd8c4c05526bfcd"
+API_KEY = "API HERE !!!"
 BASE_URL = "https://api.openweathermap.org/data/2.5/weather"
 
 def get_weather_data(city):
